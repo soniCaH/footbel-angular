@@ -129,7 +129,7 @@ angular.module('footbel', [])
   })
 
   // Display next matches for all teams of a specified reg number.
-  .directive('matchesnext', function ($http) {
+  .directive('matchesNext', function ($http) {
     return {
       restrict: 'EA',
       transclude: true,
@@ -158,7 +158,7 @@ angular.module('footbel', [])
   })
 
   // Display previous matches for all teams of a specified reg number.
-  .directive('matchesprev', function ($http) {
+  .directive('matchesPrev', function ($http) {
     return {
       restrict: 'EA',
       transclude: true,
@@ -187,7 +187,7 @@ angular.module('footbel', [])
   })
 
   // Display next match(es) for a specific team in a specific division.
-  .directive('matchnext', function ($http) {
+  .directive('matchesDivisionNext', function ($http) {
     return {
       restrict: 'EA',
       transclude: true,
@@ -197,7 +197,7 @@ angular.module('footbel', [])
         division: '@division',
         number: '@number'
       },
-      templateUrl: 'match_next.tpl.html',
+      templateUrl: 'matches_division_next.tpl.html',
       link: function ($scope, element) {
 
       },
@@ -218,7 +218,7 @@ angular.module('footbel', [])
   })
 
   // Display previous match(es) for a specific team in a specific division.
-  .directive('matchprev', function ($http) {
+  .directive('matchesDivisionPrev', function ($http) {
     return {
       restrict: 'EA',
       transclude: true,
@@ -228,7 +228,7 @@ angular.module('footbel', [])
         division: '@division',
         number: '@number'
       },
-      templateUrl: 'match_next.tpl.html',
+      templateUrl: 'matches_division_next.tpl.html',
       link: function ($scope, element) {
 
       },
@@ -249,7 +249,7 @@ angular.module('footbel', [])
   })
 
   // Display next match(es) for a specific team in a specific division with logo.
-  .directive('matchnextfull', function ($http) {
+  .directive('matchesDivisionNextFull', function ($http) {
     return {
       restrict: 'EA',
       transclude: true,
@@ -259,7 +259,7 @@ angular.module('footbel', [])
         division: '@division',
         number: '@number'
       },
-      templateUrl: 'match_next_full.tpl.html',
+      templateUrl: 'matches_division_next_full.tpl.html',
       link: function ($scope, element) {
 
       },
@@ -280,7 +280,7 @@ angular.module('footbel', [])
   })
 
   // Display previous match(es) for a specific team in a specific division with logo.
-  .directive('matchprevfull', function ($http) {
+  .directive('matchesDivisionPrevFull', function ($http) {
     return {
       restrict: 'EA',
       transclude: true,
@@ -290,7 +290,7 @@ angular.module('footbel', [])
         division: '@division',
         number: '@number'
       },
-      templateUrl: 'match_next_full.tpl.html',
+      templateUrl: 'matches_division_next_full.tpl.html',
       link: function ($scope, element) {
 
       },

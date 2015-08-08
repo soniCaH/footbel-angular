@@ -368,29 +368,188 @@
     </div>
   </div>
 
+  <h3 id="matches_next">
+    Next/Previous matches for a reg number
+    <a href="#top" class="right scroll">Back to top</a>
+  </h3>
 
-  <!--Volgende wedstrijden voor alle ploegen van KCVV Elewijt:-->
-  <!--<div data-matchesnext="" data-season="1516" data-regnumber="00055"></div>-->
+  <p class="description">Create a listing of all upcoming/previous matches per
+    division of a specified regnumber.</p>
 
-  <!--Vorige wedstrijden voor alle ploegen van KCVV Elewijt:-->
-  <!--<div data-matchesprev="" data-season="1516" data-regnumber="00055"></div>-->
+  <pre><code class="language-markup">&lt;div data-matches_next=""
+    data-season="[season]"
+    data-regnumber="[reg number]"&gt;&lt;/div&gt;</code></pre>
 
-  <!--Volgende (2) wedstrijden voor de zaterdagreserven van KCVV Elewijt:-->
-  <!--<div data-matchnext="" data-season="1516" data-regnumber="00055"-->
-  <!--data-division="RSF" number="2"></div>-->
 
-  <!--Vorige wedstrijd voor de zaterdagreserven van KCVV Elewijt:-->
-  <!--<div data-matchprev="" data-season="1516" data-regnumber="00055"-->
-  <!--data-division="RSF" number="1"></div>-->
+  <pre><code class="language-markup">&lt;div data-matches_prev=""
+    data-season="[season]"
+    data-regnumber="[reg number]"&gt;&lt;/div&gt;</code></pre>
 
-  <!--Volgende (3) wedstrijden voor de 1e ploeg van KCVV Elewijt (Full view):-->
-  <!--<div data-matchnextfull="" data-season="1516" data-regnumber="00055"-->
-  <!--data-division="RSF" number="3"></div>-->
+  <dl>
+    <dt>
+      <code>data-season</code>
+    </dt>
+    <dd>
+      <p>Season code: 1516 for example.</p>
+    </dd>
+    <dt>
+      <code>[data-regnumber]</code>
+    </dt>
+    <dd>
+      <p>Reg number to display all upcoming matches for. Needs a number of 5
+        digits - include leading zero(s).</p>
+    </dd>
+  </dl>
 
-  <!--Vorige wedstrijd voor de 1e ploeg van KCVV Elewijt (Full view):-->
-  <!--<div data-matchprevfull="" data-season="1516" data-regnumber="00055"-->
-  <!--data-division="RSF"></div>-->
+  <h4>Examples:</h4>
+  <ul class="tabs" data-tab>
+    <li class="tab-title active">
+      <a href="#matches_next1">KCVV Elewijt 2015-2016 - Previous</a>
+    </li>
+    <li class="tab-title">
+      <a href="#matches_next2">RSC Anderlecht 2015-2016 - Upcoming</a>
+    </li>
+  </ul>
+  <div class="tabs-content">
+    <div class="content active" id="matches_next1">
+      <pre><code class="language-markup">&lt;div data-matches_prev=""
+        data-season="1516"
+        data-regnumber="00055"&gt;&lt;/div&gt;</code></pre>
 
+      <div data-matches_prev="" data-season="1516"
+           data-regnumber="00055"></div>
+    </div>
+    <div class="content" id="matches_next2">
+      <pre><code class="language-markup">&lt;div data-matches_next=""
+        data-season="1516"
+        data-regnumber="00032"&gt;&lt;/div&gt;</code></pre>
+
+
+      <div data-matches_next="" data-season="1516"
+           data-regnumber="00035"></div>
+    </div>
+  </div>
+
+  <h3 id="match_next">
+    Next/Previous match(es) for a specific division from a reg number
+    <a href="#top" class="right scroll">Back to top</a>
+  </h3>
+
+  <p class="description">Display a number of next/last match(es) for 1 specific
+    division in a club. Choice between small and large result (with club
+    logos).</p>
+
+  <pre><code class="language-markup">&lt;div data-matches_division_next=""
+    data-season="[season]"
+    data-regnumber="[regnumber]"
+    data-division="[division]"
+    number="[number]"&gt;&lt;/div&gt;</code></pre>
+
+  <pre><code class="language-markup">&lt;div data-matches_division_prev=""
+    data-season="[season]"
+    data-regnumber="[regnumber]"
+    data-division="[division]"
+    number="[number]"&gt;&lt;/div&gt;</code></pre>
+
+  <pre><code class="language-markup">&lt;div data-matches_division_next_full=""
+    data-season="[season]"
+    data-regnumber="[regnumber]"
+    data-division="[division]"
+    number="[number]"&gt;&lt;/div&gt;</code></pre>
+
+  <pre><code class="language-markup">&lt;div data-matches_division_prev_full=""
+    data-season="[season]"
+    data-regnumber="[regnumber]"
+    data-division="[division]"
+    data-number="[number]"&gt;&lt;/div&gt;</code></pre>
+
+  <dl>
+    <dt>
+      <code>data-season</code>
+    </dt>
+    <dd>
+      <p>Season code: 1516 for example.</p>
+    </dd>
+    <dt>
+      <code>[data-regnumber]</code>
+    </dt>
+    <dd>
+      <p>Reg number to display all upcoming matches for. Needs a number of 5
+        digits - include leading zero(s).</p>
+    </dd>
+    <dt>
+      <code>[data-division]</code>
+    </dt>
+    <dd>
+      <p>Division code to display match(es) from.</p>
+    </dd>
+    <dt>
+      <code>[data-number]</code>
+    </dt>
+    <dd>
+      <p>Number of results to show.</p>
+    </dd>
+  </dl>
+
+  <h4>Examples:</h4>
+  <ul class="tabs" data-tab>
+    <li class="tab-title active">
+      <a href="#matches_division_next1">Next</a>
+    </li>
+    <li class="tab-title">
+      <a href="#matches_division_next2">Previous</a>
+    </li>
+    <li class="tab-title">
+      <a href="#matches_division_next3">Next with Logo</a>
+    </li>
+    <li class="tab-title">
+      <a href="#matches_division_next4">Previous with Logo</a>
+    </li>
+  </ul>
+  <div class="tabs-content">
+    <div class="content active" id="matches_division_next1">
+      <pre><code class="language-markup">&lt;div data-matches_division_next=""
+        data-season="1516"
+        data-regnumber="00055"
+        data-division="4G"
+        data-number="4"&gt;&lt;/div&gt;</code></pre>
+
+      <div data-matches_division_next="" data-season="1516"
+           data-regnumber="00055" data-division="4G" data-number="4"></div>
+    </div>
+    <div class="content" id="matches_division_next2">
+      <pre><code class="language-markup">&lt;div data-matches_division_prev=""
+        data-season="1516"
+        data-regnumber="00035"
+        data-division="1"
+        data-number="3"&gt;&lt;/div&gt;</code></pre>
+
+      <div data-matches_division_prev="" data-season="1516"
+           data-regnumber="00035" data-division="1" data-number="3"></div>
+    </div>
+    <div class="content" id="matches_division_next3">
+      <pre><code class="language-markup">&lt;div
+        data-matches_division_next_full=""
+        data-season="1516"
+        data-regnumber="000535"
+        data-division="1"
+        data-number="2"&gt;&lt;/div&gt;</code></pre>
+
+      <div data-matches_division_next_full="" data-season="1516"
+           data-regnumber="00035" data-division="1" data-number="2"></div>
+    </div>
+    <div class="content" id="matches_division_next4">
+      <pre><code class="language-markup">&lt;div
+        data-matches_division_prev_full=""
+        data-season="1516"
+        data-regnumber="00055"
+        data-division="BCF"
+        data-number="1"&gt;&lt;/div&gt;</code></pre>
+
+      <div data-matches_division_prev_full="" data-season="1516"
+           data-regnumber="00055" data-division="BCF" data-number="1"></div>
+    </div>
+  </div>
 
 </div>
 
