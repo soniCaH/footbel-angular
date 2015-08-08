@@ -25,13 +25,15 @@
           <h1><a href="#">Footbel Data</a></h1>
         </li>
         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+        </li>
       </ul>
 
       <section class="top-bar-section">
         <!-- Left Nav Section -->
         <ul class="left">
-          <li><a href="#ranking_short">Short Rankings</a></li>
+          <li><a href="#ranking" class="scroll">Full Rankings</a></li>
+          <li><a href="#ranking_short" class="scroll">Short Rankings</a></li>
         </ul>
       </section>
     </nav>
@@ -76,7 +78,10 @@
 
   <p>For some templates, a province code is needed. Below you can find an
     overview of all of them.</p>
-  <div data-alert class="alert-box info radius">For performance reasons some provinces might not be imported (yet) in the database.</div>
+
+  <div data-alert class="alert-box info radius">For performance reasons some
+    provinces might not be imported (yet) in the database.
+  </div>
 
   <table>
     <thead>
@@ -113,30 +118,20 @@
 
   <h2>Rankings</h2>
 
-  <h3 id="ranking_short">Short ranking <a href="#top" class="right">Back to top</a></h3>
+  <h3 id="ranking">
+    Full ranking
+    <a href="#top" class="right scroll">Back to top</a>
+  </h3>
 
+  <p class="description">Full rankings of a season/division, sorted by
+    position.</p>
 
-  <p class="description">Short rankings to display as a widget. Will retrieve
-    the ranking of the team (in division/season we define), and fetch a defined
-    number of teams who are ranked above and below. If there are no (or too few)
-    teams ranked higher/lower, the focus will shift to the other side (so for
-    example if the team we search for is in first position and we want 5
-    results, we will display our team + 4 teams below it).</p>
-
-  <pre><code class="language-markup">&lt;div data-rankingshort=""
-    data-season="[season]"
-    data-province="[province code]"
-    data-division="[division code]"
-    data-teamname="[team name]"
-    data-number="[number of total results]"&gt;&lt;/div&gt;</code></pre>
+  <pre><code class="language-markup">&lt;div data-ranking=""
+    data-season="1516"
+    data-province="national"
+    data-division="1"&gt;&lt;/div&gt;</code></pre>
 
   <dl>
-    <dt>
-      <code>data-division</code>
-    </dt>
-    <dd>
-      <p>Division code.</p>
-    </dd>
     <dt>
       <code>data-season</code>
     </dt>
@@ -149,6 +144,86 @@
     <dd>
       <p>Province code (shorthand) or "national": "national", "bra" for Brabant,
         "ant" for Antwerp...</p>
+    </dd>
+    <dt>
+      <code>data-division</code>
+    </dt>
+    <dd>
+      <p>Division code.</p>
+    </dd>
+  </dl>
+
+  <h4>Examples:</h4>
+  <ul class="tabs" data-tab>
+    <li class="tab-title active">
+      <a href="#ranking1">Brabant - A-squad 2015-2016</a>
+    </li>
+    <li class="tab-title">
+      <a href="#ranking2">National - RSC Anderlecht 2015-2016</a>
+    </li>
+  </ul>
+  <div class="tabs-content">
+    <div class="content active" id="ranking1">
+      <pre><code class="language-markup">&lt;div data-ranking=""
+        data-season="1516"
+        data-province="bra"
+        data-division="3D"&gt;&lt;/div&gt;</code></pre>
+
+      <div data-ranking="" data-season="1516" data-province="bra"
+           data-division="3D"></div>
+    </div>
+    <div class="content" id="ranking2">
+      <pre><code class="language-markup">&lt;div data-ranking=""
+        data-season="1516"
+        data-province="national"
+        data-division="1"&gt;&lt;/div&gt;</code></pre>
+
+      <div data-ranking="" data-season="1516" data-province="national"
+           data-division="1"></div>
+    </div>
+  </div>
+
+  <h3 id="ranking_short">
+    Short ranking
+    <a href="#top" class="right scroll">Back to top</a>
+  </h3>
+
+  <p class="description">Short rankings to display as a widget. Will retrieve
+    the ranking of the team (in division/season we define), and fetch a
+    defined
+    number of teams who are ranked above and below. If there are no (or too
+    few)
+    teams ranked higher/lower, the focus will shift to the other side (so for
+    example if the team we search for is in first position and we want 5
+    results, we will display our team + 4 teams below it).</p>
+
+  <pre><code class="language-markup">&lt;div data-ranking_short=""
+    data-season="[season]"
+    data-province="[province code]"
+    data-division="[division code]"
+    data-teamname="[team name]"
+    data-number="[number of total results]"&gt;&lt;/div&gt;</code></pre>
+
+  <dl>
+    <dt>
+      <code>data-season</code>
+    </dt>
+    <dd>
+      <p>Season code: 1516 for example.</p>
+    </dd>
+    <dt>
+      <code>data-province</code>
+    </dt>
+    <dd>
+      <p>Province code (shorthand) or "national": "national", "bra" for
+        Brabant,
+        "ant" for Antwerp...</p>
+    </dd>
+    <dt>
+      <code>data-division</code>
+    </dt>
+    <dd>
+      <p>Division code.</p>
     </dd>
     <dt>
       <code>data-teamname</code>
@@ -165,16 +240,17 @@
     </dd>
   </dl>
 
+  <h4>Examples:</h4>
   <ul class="tabs" data-tab>
     <li class="tab-title active">
-      <a href="#panel1">Brabant - A-squad 2015-2016</a>
+      <a href="#ranking_short1">Brabant - A-squad 2015-2016</a>
     </li>
     <li class="tab-title">
-      <a href="#panel2">National - RSC Anderlecht 2015-2016</a>
+      <a href="#ranking_short2">National - RSC Anderlecht 2015-2016</a>
     </li>
   </ul>
   <div class="tabs-content">
-    <div class="content active" id="panel1">
+    <div class="content active" id="ranking_short1">
       <pre><code class="language-markup">&lt;div data-ranking_short=""
         data-season="1516"
         data-province="bra"
@@ -186,7 +262,7 @@
            data-division="3D" data-teamname="KCVV.Elewijt"
            data-number="5"></div>
     </div>
-    <div class="content" id="panel2">
+    <div class="content" id="ranking_short2">
       <pre><code class="language-markup">&lt;div data-ranking_short=""
         data-season="1516"
         data-province="national"

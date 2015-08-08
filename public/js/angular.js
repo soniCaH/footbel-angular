@@ -67,7 +67,7 @@ angular.module('footbel', [])
         teamname: '@teamname',
         number: '@number'
       },
-      templateUrl: 'ranking-short.tpl.html',
+      templateUrl: 'ranking_short.tpl.html',
       link: function ($scope, element) {
 
       },
