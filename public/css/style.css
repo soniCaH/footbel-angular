@@ -110,7 +110,7 @@ dd {
   color: #FFFFFF;
 }
 
-h3 a {
+h2 a, h3 a {
   font-size: 1rem;
   margin: 0.3rem 0;
 }
