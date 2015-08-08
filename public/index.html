@@ -17,6 +17,28 @@
 </head>
 <body>
 
+<div id="top">
+  <div class="row">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">Footbel Data</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li><a href="#ranking_short">Short Rankings</a></li>
+        </ul>
+      </section>
+    </nav>
+
+  </div>
+</div>
+
 <div class="row">
   <h1>Footbel Data visualization via AngularJS</h1>
 
@@ -51,6 +73,10 @@
     </tr>
     </tbody>
   </table>
+
+  <p>For some templates, a province code is needed. Below you can find an
+    overview of all of them.</p>
+  <div data-alert class="alert-box info radius">For performance reasons some provinces might not be imported (yet) in the database.</div>
 
   <table>
     <thead>
@@ -87,7 +113,8 @@
 
   <h2>Rankings</h2>
 
-  <h3>Short ranking</h3>
+  <h3 id="ranking_short">Short ranking <a href="#top" class="right">Back to top</a></h3>
+
 
   <p class="description">Short rankings to display as a widget. Will retrieve
     the ranking of the team (in division/season we define), and fetch a defined
