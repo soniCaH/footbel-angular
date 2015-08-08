@@ -97,37 +97,37 @@ Create a listing of all upcoming/previous matches per division of a specified re
 Display a number of next/last match(es) for 1 specific division in a club. Choice between small and large result (with club logos).
         
 ```HTML
-<div div data-matches_division_next=""
+<div data-matches_division_next=""
          data-season="[season]"
          data-regnumber="[regnumber]"
          data-division="[division]"
-         number="[number]">
+         data-number="[number]">
 </div>
 ```
         
 ```HTML
-<div div data-matches_division_prev=""
+<div data-matches_division_prev=""
          data-season="[season]"
          data-regnumber="[regnumber]"
          data-division="[division]"
-         number="[number]">
+         data-number="[number]">
 </div>
 ```
         
 ```HTML
-<div div data-matches_division_next_full=""
+<div data-matches_division_next_full=""
          data-season="[season]"
          data-regnumber="[regnumber]"
          data-division="[division]"
-         number="[number]">
+         data-number="[number]">
 </div>
 ```
         
 ```HTML
-<div div data-matches_division_prev_full=""
+<div data-matches_division_prev_full=""
          data-season="[season]"
          data-regnumber="[regnumber]"
          data-division="[division]"
-         number="[number]">
+         data-number="[number]">
 </div>
 ```
