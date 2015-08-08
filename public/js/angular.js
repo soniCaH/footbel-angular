@@ -89,7 +89,7 @@ angular.module('footbel', [])
   })
 
   // Overview of matches for a division. Optional parameters are logo and specific matchday.
-  .directive('matches', function ($http) {
+  .directive('matchesOverview', function ($http) {
     return {
       restrict: 'EA',
       transclude: true,

@@ -24,16 +24,30 @@
         <li class="name">
           <h1><a href="#">Footbel Data</a></h1>
         </li>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+        <li class="toggle-topbar menu-icon">
+          <a href="#"><span>Menu</span></a>
         </li>
       </ul>
 
       <section class="top-bar-section">
         <!-- Left Nav Section -->
         <ul class="left">
-          <li><a href="#ranking" class="scroll">Full Rankings</a></li>
-          <li><a href="#ranking_short" class="scroll">Short Rankings</a></li>
+          <li>
+            <a href="#ranking" class="scroll">Full Rankings</a>
+          </li>
+          <li>
+            <a href="#ranking_short" class="scroll">Short Rankings</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#matches_overview" class="scroll">Matches overview</a>
+          </li>
+          <li>
+            <a href="#matches_next" class="scroll">Matches next/prev</a>
+          </li>
+          <li>
+            <a href="#match_next" class="scroll">Individual next/prev match</a>
+          </li>
         </ul>
       </section>
     </nav>
@@ -142,8 +156,7 @@
       <code>data-province</code>
     </dt>
     <dd>
-      <p>Province code (shorthand) or "national": "national", "bra" for Brabant,
-        "ant" for Antwerp...</p>
+      <p>Province code (shorthand) or "national"</p>
     </dd>
     <dt>
       <code>data-division</code>
@@ -190,11 +203,9 @@
 
   <p class="description">Short rankings to display as a widget. Will retrieve
     the ranking of the team (in division/season we define), and fetch a
-    defined
-    number of teams who are ranked above and below. If there are no (or too
-    few)
-    teams ranked higher/lower, the focus will shift to the other side (so for
-    example if the team we search for is in first position and we want 5
+    defined number of teams who are ranked above and below. If there are no (or
+    too few) teams ranked higher/lower, the focus will shift to the other side
+    (so for example if the team we search for is in first position and we want 5
     results, we will display our team + 4 teams below it).</p>
 
   <pre><code class="language-markup">&lt;div data-ranking_short=""
@@ -215,9 +226,7 @@
       <code>data-province</code>
     </dt>
     <dd>
-      <p>Province code (shorthand) or "national": "national", "bra" for
-        Brabant,
-        "ant" for Antwerp...</p>
+      <p>Province code (shorthand) or "national"</p>
     </dd>
     <dt>
       <code>data-division</code>
@@ -276,6 +285,89 @@
     </div>
   </div>
 
+  <h3 id="matches_overview">
+    Matches overview
+    <a href="#top" class="right scroll">Back to top</a>
+  </h3>
+
+  <p class="description">Create a listing of all matches, grouped per matchday,
+    or select an individual matchday to display.</p>
+
+  <pre><code class="language-markup">&lt;div data-matches_overview=""
+    data-season="[season]"
+    data-province="[province code]"
+    data-division="[division code]"
+    data-logo="[display teamlogos]"
+    data-matchday="[specific matchday or 0]"&gt;&lt;/div&gt;</code></pre>
+
+  <dl>
+    <dt>
+      <code>data-season</code>
+    </dt>
+    <dd>
+      <p>Season code: 1516 for example.</p>
+    </dd>
+    <dt>
+      <code>data-province</code>
+    </dt>
+    <dd>
+      <p>Province code (shorthand) or "national"</p>
+    </dd>
+    <dt>
+      <code>data-division</code>
+    </dt>
+    <dd>
+      <p>Division code.</p>
+    </dd>
+    <dt>
+      <code>data-matchday</code>
+    </dt>
+    <dd>
+      <p>Set to 0 for all matches, otherwise pick a specific matchday.</p>
+    </dd>
+    <dt>
+      <code>[data-logo]</code>
+    </dt>
+    <dd>
+      <p>Optional. Set to TRUE if you want to display club logos in the match
+        overview.</p>
+    </dd>
+  </dl>
+
+  <h4>Examples:</h4>
+  <ul class="tabs" data-tab>
+    <li class="tab-title active">
+      <a href="#matches_overview1">Brabant - A-squad 2015-2016</a>
+    </li>
+    <li class="tab-title">
+      <a href="#matches_overview2">Brabant - Cup 2015-2016</a>
+    </li>
+  </ul>
+  <div class="tabs-content">
+    <div class="content active" id="matches_overview1">
+      <pre><code class="language-markup">&lt;div data-matches_overview=""
+        data-season="1516"
+        data-province="bra"
+        data-division="3D"
+        data-matchday="5"
+        data-logo="TRUE"&gt;&lt;/div&gt;</code></pre>
+
+      <div data-matches_overview="" data-season="1516" data-province="bra"
+           data-division="3D" data-matchday="5" data-logo="TRUE"></div>
+    </div>
+    <div class="content" id="matches_overview2">
+      <pre><code class="language-markup">&lt;div data-matches_overview=""
+        data-season="1516"
+        data-province="bra"
+        data-division="BCF"
+        data-matchday="0"&gt;&lt;/div&gt;</code></pre>
+
+
+      <div data-matches_overview="" data-season="1516" data-province="bra"
+           data-division="BCF" data-matchday="0"></div>
+    </div>
+  </div>
+
 
   <!--Volgende wedstrijden voor alle ploegen van KCVV Elewijt:-->
   <!--<div data-matchesnext="" data-season="1516" data-regnumber="00055"></div>-->
@@ -299,34 +391,6 @@
   <!--<div data-matchprevfull="" data-season="1516" data-regnumber="00055"-->
   <!--data-division="RSF"></div>-->
 
-  <!--<h2>1e nationale</h2>-->
-
-  <!--<h3>Ranking</h3>-->
-
-  <!--<div data-ranking="" data-division="1" data-season="1516"-->
-  <!--data-province="national"></div>-->
-
-  <!--<h3>Alle wedstrijden</h3>-->
-
-  <!--<div data-matches="" data-division="1" data-season="1516"-->
-  <!--data-province="national" data-logo="TRUE" data-matchday="0"></div>-->
-
-  <!--<h2>KCVV Elewijt - 3e Provinciale D</h2>-->
-
-  <!--<h3>Ranking</h3>-->
-
-  <!--<div data-ranking="" data-division="3D" data-season="1516"-->
-  <!--data-province="bra"></div>-->
-
-  <!--<h3>Alle wedstrijden</h3>-->
-
-  <!--<div data-matches="" data-division="3D" data-season="1516"-->
-  <!--data-province="bra" data-matchday="0"></div>-->
-
-  <!--<h3>Alle wedstrijden van matchdag 2</h3>-->
-
-  <!--<div data-matches="" data-division="3D" data-season="1516"-->
-  <!--data-province="bra" data-matchday="2"></div>-->
 
 </div>
 

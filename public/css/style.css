@@ -118,3 +118,9 @@ h3 a {
 .kcvv {
   background: #a6e22e;
 }
+
+.image__club_logo {
+  height: auto;
+  max-width: 100px;
+  width: 100px;
+}

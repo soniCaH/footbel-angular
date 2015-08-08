@@ -3,7 +3,7 @@
 </span>
 
 
-<table ng-show="ready">
+<table ng-show="ready" class="ranking_short">
   <tbody>
   <tr ng-repeat="ranking in rankings | orderObjectBy:'int_position'" ng-class="{'kcvv': ranking.int_position == 0}">
     <td ng-bind="ranking.position"></td>
