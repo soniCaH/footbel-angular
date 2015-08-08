@@ -98,36 +98,36 @@ Display a number of next/last match(es) for 1 specific division in a club. Choic
         
 ```HTML
 <div data-matches_division_next=""
-         data-season="[season]"
-         data-regnumber="[regnumber]"
-         data-division="[division]"
-         data-number="[number]">
+     data-season="[season]"
+     data-regnumber="[regnumber]"
+     data-division="[division]"
+     data-number="[number]">
 </div>
 ```
         
 ```HTML
 <div data-matches_division_prev=""
-         data-season="[season]"
-         data-regnumber="[regnumber]"
-         data-division="[division]"
-         data-number="[number]">
+     data-season="[season]"
+     data-regnumber="[regnumber]"
+     data-division="[division]"
+     data-number="[number]">
 </div>
 ```
         
 ```HTML
 <div data-matches_division_next_full=""
-         data-season="[season]"
-         data-regnumber="[regnumber]"
-         data-division="[division]"
-         data-number="[number]">
+     data-season="[season]"
+     data-regnumber="[regnumber]"
+     data-division="[division]"
+     data-number="[number]">
 </div>
 ```
         
 ```HTML
 <div data-matches_division_prev_full=""
-         data-season="[season]"
-         data-regnumber="[regnumber]"
-         data-division="[division]"
-         data-number="[number]">
+     data-season="[season]"
+     data-regnumber="[regnumber]"
+     data-division="[division]"
+     data-number="[number]">
 </div>
 ```
