@@ -1,0 +1,33 @@
+<span class="tcon-loader--spinner360" aria-label="loading" ng-show="!ready">
+  <span class="tcon-visuallyhidden">loading</span>
+</span>
+
+
+<table border="1" cellpadding="10" ng-show="ready">
+  <thead>
+    <th class="ranking__position">Pos</th>
+    <th class="ranking__team">Team</th>
+    <th class="ranking__games">G</th>
+    <th class="ranking__wins">W</th>
+    <th class="ranking__draws">D</th>
+    <th class="ranking__losses">L</th>
+    <th class="ranking__goals-pro">Goals+</th>
+    <th class="ranking__goals-against">Goals-</th>
+    <th class="ranking__goals-diff">Saldo</th>
+    <th class="ranking__goals-points">Ptn</th>
+  </thead>
+  <tbody>
+  <tr ng-repeat="ranking in rankings | orderObjectBy:'position'">
+    <td ng-bind="ranking.position"></td>
+    <td ng-bind="ranking.team"></td>
+    <td ng-bind="ranking.matches"></td>
+    <td ng-bind="ranking.wins"></td>
+    <td ng-bind="ranking.draws"></td>
+    <td ng-bind="ranking.losses"></td>
+    <td ng-bind="ranking.goals_pro"></td>
+    <td ng-bind="ranking.goals_against"></td>
+    <td ng-bind="ranking.goals_diff"></td>
+    <td ng-bind="ranking.points"></td>
+  </tr>
+  </tbody>
+</table>

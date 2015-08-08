@@ -1,0 +1,240 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Footbel Data via AngularJS</title>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="js/vendor/modernizr.js"></script>
+
+  <link href="css/prism.css" type="text/css" rel="stylesheet"/>
+  <link href="css/foundation.min.css" type="text/css" rel="stylesheet"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="row">
+  <h1>Footbel Data visualization via AngularJS</h1>
+
+  <p>For some templates, a division code is needed. Below you can find some
+    examples for the squads of KCVV Elewijt in 2015-2016.</p>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Squad</th>
+      <th>A-squad</th>
+      <th>Cup of Brabant</th>
+      <th>B-squad</th>
+      <th>Reserves</th>
+      <th>U10</th>
+      <th>U9</th>
+      <th>U8</th>
+      <th>U7</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Division code</th>
+      <td>3D</td>
+      <td>BCF</td>
+      <td>4G</td>
+      <td>RSF</td>
+      <td>10VK</td>
+      <td>9VI</td>
+      <td>8VM</td>
+      <td>7VP</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Description</th>
+      <th>National</th>
+      <th>Brabant</th>
+      <th>Antwerp</th>
+      <th>Limburg</th>
+      <th>East Flanders</th>
+      <th>West Flanders</th>
+      <th>Hainaut</th>
+      <th>Liège</th>
+      <th>Namur</th>
+      <th>Luxembourg</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Shorthand code</th>
+      <td>national</td>
+      <td>bra</td>
+      <td>ant</td>
+      <td>lim</td>
+      <td>ovl</td>
+      <td>wvl</td>
+      <td>hen</td>
+      <td>lui</td>
+      <td>nam</td>
+      <td>lux</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h2>Rankings</h2>
+
+  <h3>Short ranking</h3>
+
+  <p class="description">Short rankings to display as a widget. Will retrieve
+    the ranking of the team (in division/season we define), and fetch a defined
+    number of teams who are ranked above and below. If there are no (or too few)
+    teams ranked higher/lower, the focus will shift to the other side (so for
+    example if the team we search for is in first position and we want 5
+    results, we will display our team + 4 teams below it).</p>
+
+  <pre><code class="language-markup">&lt;div data-rankingshort=""
+    data-season="[season]"
+    data-province="[province code]"
+    data-division="[division code]"
+    data-teamname="[team name]"
+    data-number="[number of total results]"&gt;&lt;/div&gt;</code></pre>
+
+  <dl>
+    <dt>
+      <code>data-division</code>
+    </dt>
+    <dd>
+      <p>Division code.</p>
+    </dd>
+    <dt>
+      <code>data-season</code>
+    </dt>
+    <dd>
+      <p>Season code: 1516 for example.</p>
+    </dd>
+    <dt>
+      <code>data-province</code>
+    </dt>
+    <dd>
+      <p>Province code (shorthand) or "national": "national", "bra" for Brabant,
+        "ant" for Antwerp...</p>
+    </dd>
+    <dt>
+      <code>data-teamname</code>
+    </dt>
+    <dd>
+      <p>Teamname, or part of it, to highlight and focus our short ranking
+        on.</p>
+    </dd>
+    <dt>
+      <code>data-number</code>
+    </dt>
+    <dd>
+      <p>Number of results to display in total. Odd number is preferred.</p>
+    </dd>
+  </dl>
+
+  <ul class="tabs" data-tab>
+    <li class="tab-title active">
+      <a href="#panel1">Brabant - A-squad 2015-2016</a>
+    </li>
+    <li class="tab-title">
+      <a href="#panel2">National - RSC Anderlecht 2015-2016</a>
+    </li>
+  </ul>
+  <div class="tabs-content">
+    <div class="content active" id="panel1">
+      <pre><code class="language-markup">&lt;div data-ranking_short=""
+        data-season="1516"
+        data-province="bra"
+        data-division="3D"
+        data-teamname="KCVV.Elewijt"
+        data-number="5"&gt;&lt;/div&gt;</code></pre>
+
+      <div data-ranking_short="" data-season="1516" data-province="bra"
+           data-division="3D" data-teamname="KCVV.Elewijt"
+           data-number="5"></div>
+    </div>
+    <div class="content" id="panel2">
+      <pre><code class="language-markup">&lt;div data-ranking_short=""
+        data-season="1516"
+        data-province="national"
+        data-division="1"
+        data-teamname="R.SC.Anderlecht"
+        data-number="7"&gt;&lt;/div&gt;</code></pre>
+
+      <div data-ranking_short="" data-season="1516" data-province="national"
+           data-division="1" data-teamname="R.SC.Anderlecht"
+           data-number="7"></div>
+    </div>
+  </div>
+
+
+  <!--Volgende wedstrijden voor alle ploegen van KCVV Elewijt:-->
+  <!--<div data-matchesnext="" data-season="1516" data-regnumber="00055"></div>-->
+
+  <!--Vorige wedstrijden voor alle ploegen van KCVV Elewijt:-->
+  <!--<div data-matchesprev="" data-season="1516" data-regnumber="00055"></div>-->
+
+  <!--Volgende (2) wedstrijden voor de zaterdagreserven van KCVV Elewijt:-->
+  <!--<div data-matchnext="" data-season="1516" data-regnumber="00055"-->
+  <!--data-division="RSF" number="2"></div>-->
+
+  <!--Vorige wedstrijd voor de zaterdagreserven van KCVV Elewijt:-->
+  <!--<div data-matchprev="" data-season="1516" data-regnumber="00055"-->
+  <!--data-division="RSF" number="1"></div>-->
+
+  <!--Volgende (3) wedstrijden voor de 1e ploeg van KCVV Elewijt (Full view):-->
+  <!--<div data-matchnextfull="" data-season="1516" data-regnumber="00055"-->
+  <!--data-division="RSF" number="3"></div>-->
+
+  <!--Vorige wedstrijd voor de 1e ploeg van KCVV Elewijt (Full view):-->
+  <!--<div data-matchprevfull="" data-season="1516" data-regnumber="00055"-->
+  <!--data-division="RSF"></div>-->
+
+  <!--<h2>1e nationale</h2>-->
+
+  <!--<h3>Ranking</h3>-->
+
+  <!--<div data-ranking="" data-division="1" data-season="1516"-->
+  <!--data-province="national"></div>-->
+
+  <!--<h3>Alle wedstrijden</h3>-->
+
+  <!--<div data-matches="" data-division="1" data-season="1516"-->
+  <!--data-province="national" data-logo="TRUE" data-matchday="0"></div>-->
+
+  <!--<h2>KCVV Elewijt - 3e Provinciale D</h2>-->
+
+  <!--<h3>Ranking</h3>-->
+
+  <!--<div data-ranking="" data-division="3D" data-season="1516"-->
+  <!--data-province="bra"></div>-->
+
+  <!--<h3>Alle wedstrijden</h3>-->
+
+  <!--<div data-matches="" data-division="3D" data-season="1516"-->
+  <!--data-province="bra" data-matchday="0"></div>-->
+
+  <!--<h3>Alle wedstrijden van matchdag 2</h3>-->
+
+  <!--<div data-matches="" data-division="3D" data-season="1516"-->
+  <!--data-province="bra" data-matchday="2"></div>-->
+
+</div>
+
+<script src="js/transformicon.js"></script>
+<script src="js/prism.js"></script>
+
+<script src="js/foundation.min.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+
+
+</html>
