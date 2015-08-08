@@ -1,5 +1,7 @@
 # Footbel Data visualization via AngularJS #
 
+Web version of this "documentation" available at http://footbel-ang.van-ransbeeck.be/.
+
 ## Usage ##
 
 Getting up and running is easy. All you have to do is include some JavaScript files and add templates (Angular directives) to your HTML files (see below for examples).
@@ -58,3 +60,74 @@ If there are no (or too few) teams ranked higher/lower, the focus will shift to 
 ```
 
 ## Matches ##
+
+### Overview ###
+
+Create a listing of all matches, grouped per matchday, or select an individual matchday to display.
+        
+```HTML
+<div data-matches_overview=""
+     data-season="[season]"
+     data-province="[province code]"
+     data-division="[division code]"
+     data-logo="[display teamlogos]"
+     data-matchday="[specific matchday or 0]">
+</div>
+```
+
+### Next/Previous matches for a reg number ###
+
+Create a listing of all upcoming/previous matches per division of a specified regnumber.
+        
+```HTML
+<div data-matches_next=""
+     data-season="[season]"
+     data-regnumber="[reg number]">
+</div>
+```
+```HTML
+<div data-matches_prev=""
+     data-season="[season]"
+     data-regnumber="[reg number]">
+</div>
+```
+
+### Next/Previous match(es) for a specific division from a reg number ###
+
+Display a number of next/last match(es) for 1 specific division in a club. Choice between small and large result (with club logos).
+        
+```HTML
+<div div data-matches_division_next=""
+         data-season="[season]"
+         data-regnumber="[regnumber]"
+         data-division="[division]"
+         number="[number]">
+</div>
+```
+        
+```HTML
+<div div data-matches_division_prev=""
+         data-season="[season]"
+         data-regnumber="[regnumber]"
+         data-division="[division]"
+         number="[number]">
+</div>
+```
+        
+```HTML
+<div div data-matches_division_next_full=""
+         data-season="[season]"
+         data-regnumber="[regnumber]"
+         data-division="[division]"
+         number="[number]">
+</div>
+```
+        
+```HTML
+<div div data-matches_division_prev_full=""
+         data-season="[season]"
+         data-regnumber="[regnumber]"
+         data-division="[division]"
+         number="[number]">
+</div>
+```
