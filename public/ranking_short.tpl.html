@@ -5,7 +5,7 @@
 
 <table ng-show="ready" class="ranking_short">
   <tbody>
-  <tr ng-repeat="ranking in rankings | orderObjectBy:'int_position'" ng-class="{'kcvv': ranking.int_position == 0}">
+  <tr ng-repeat="ranking in rankings | orderObjectBy:'int_position'" ng-class="{'highlighted': ranking.int_position == 0}">
     <td ng-bind="ranking.position"></td>
     <td ng-bind="ranking.team"></td>
     <td ng-bind="ranking.matches"></td>
