@@ -5,7 +5,11 @@
 
 base_url = 'http://footbel.van-ransbeeck.be/api';
 
-angular.module('footbel', [])
+angular.module('footbel', ['slickCarousel'])
+  .config(['slickCarouselConfig', function (slickCarouselConfig) {
+    slickCarouselConfig.dots = true;
+    slickCarouselConfig.autoplay = true;
+  }])
   // Filter on object property. Default sort expects an Array instead of a list of Objects.
   .filter('orderObjectBy', function () {
     return function (items, field, reverse) {
@@ -157,6 +161,35 @@ angular.module('footbel', [])
     }
   })
 
+  // Display next matches for all teams of a specified reg number in a slider.
+  .directive('matchesNextSlider', function ($http) {
+    return {
+      restrict: 'EA',
+      transclude: true,
+      scope: {
+        season: '@season',
+        regnumber: '@regnumber'
+      },
+      templateUrl: 'matches_next_slider.tpl.html',
+      link: function ($scope, element) {
+
+      },
+      controller: function ($scope) {
+        $scope.ready = false;
+        $scope.matches = [];
+
+        $scope.base_url = base_url;
+
+        $http.get(base_url + '/matches/next/' + $scope.season + '/' +
+        $scope.regnumber)
+          .then(function (response) {
+            $scope.matches = response.data;
+            $scope.ready = true;
+          });
+      }
+    }
+  })
+
   // Display previous matches for all teams of a specified reg number.
   .directive('matchesPrev', function ($http) {
     return {
@@ -185,6 +218,36 @@ angular.module('footbel', [])
       }
     }
   })
+
+  // Display prev matches for all teams of a specified reg number in a slider.
+  .directive('matchesPrevSlider', function ($http) {
+    return {
+      restrict: 'EA',
+      transclude: true,
+      scope: {
+        season: '@season',
+        regnumber: '@regnumber'
+      },
+      templateUrl: 'matches_next_slider.tpl.html',
+      link: function ($scope, element) {
+
+      },
+      controller: function ($scope) {
+        $scope.ready = false;
+        $scope.matches = [];
+
+        $scope.base_url = base_url;
+
+        $http.get(base_url + '/matches/prev/' + $scope.season + '/' +
+        $scope.regnumber)
+          .then(function (response) {
+            $scope.matches = response.data;
+            $scope.ready = true;
+          });
+      }
+    }
+  })
+
 
   // Display next match(es) for a specific team in a specific division.
   .directive('matchesDivisionNext', function ($http) {

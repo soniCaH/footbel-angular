@@ -124,3 +124,13 @@ h2 a, h3 a {
   max-width: 100px;
   width: 100px;
 }
+
+.slick-arrow,
+.slick-arrow:before {
+  color: #a6e22e;
+}
+
+.slick-slider {
+  background-color: #a6e22e;
+  padding: 10px;
+}

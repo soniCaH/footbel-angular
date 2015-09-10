@@ -1,0 +1,8 @@
+<div data-slick="" data-data="matches">
+  <div ng-repeat="match in matches | orderObjectBy:'datetime'">
+    <h3 ng-bind="match.division"></h3>
+
+    <div ng-bind="match.datetime_formatted"></div>
+    <div ng-bind="match.home_name + ' - ' + match.away_name"></div>
+  </div>
+</div>
